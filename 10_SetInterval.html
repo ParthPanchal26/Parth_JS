@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Async JS - 2</title>
+</head>
+<body>
+    <h1 id="h1">Parth</h1>
+    <button id="btn1">stop</button>
+    
+    <script>
+        const date = () => {
+            const ele = document.querySelector('h1').innerText = Date.now();
+        }
+        const msg = setInterval(date, 1000);
+
+        document.querySelector('#btn1').addEventListener('click', (()=>{
+            clearInterval(msg);
+        }))
+    </script>
+
+</body>
+</html>
