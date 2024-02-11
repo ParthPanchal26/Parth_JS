@@ -1,1 +1,75 @@
 # Parth_JS
+
+#25_closuresInAction
+```JavaScript
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>change BG using closures</title>
+    <style>
+        body {
+            background-color: #142536;
+        }
+
+        button {
+            font-size: 20px;
+            display: block;
+            margin: auto;
+            margin-top: 50px;
+            margin-bottom: 20px;
+        }
+
+        #orange {
+            padding: 5px 30px;
+            font-weight: 600;
+            border: 2px solid orange;
+            border-radius: 0.3rem;
+            background-color: orangered;
+            transition: 0.3s;
+        }
+
+        #orange:hover {
+            padding: 6px 32px;
+            background-color: orange;
+            border-color: orangered;
+        }
+
+        #orangeRed {
+            padding: 5px 30px;
+            font-weight: 600;
+            border: 2px solid orangered;
+            border-radius: 0.3rem;
+            background-color: orange;
+            transition: 0.3s;
+        }
+
+        #orangeRed:hover {
+            padding: 6px 32px;
+            background-color: orangered;
+            border-color: orange;
+        }
+    </style>
+</head>
+
+<body>
+    <button id="orange">Orange</button>
+    <button id="orangeRed">OrangeRed</button>
+
+    <script>
+        function clickHandler(color) {
+            return function () {
+                document.body.style.backgroundColor = `${color}`;
+            }
+        }
+
+        document.getElementById('orange').onclick = clickHandler("orange");
+        document.getElementById('orangeRed').onclick = clickHandler('orangered');
+
+    </script>
+</body>
+
+</html>
+```   
